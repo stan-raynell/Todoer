@@ -1,5 +1,11 @@
 class ItemsController < ApplicationController
+  def index
+    @items = Item.all
+  end
 
+  def show
+    @item = Item.find(params[:id])
+  end
   
   def create
     @list = List.find(params[:list_id])
@@ -14,9 +20,7 @@ class ItemsController < ApplicationController
 
   def toggle
     @item = Item.find(params[:id])
-    @item.update(checked: params[:checked])
-  
-    render json: { message: "Success" }
+    @item.update(checked: params[:checked])  
   end
   private
 

@@ -1,9 +1,9 @@
 List <%= @list.title %><br>
-<% @list.items.each do |item| %>
-  <div data-controller="items">
-    <%= render "items/item", item: item %>
-  </div>
-<% end %>
+<div data-controller="items">
+  <%= render @list.items %>
+</div>
 <div>
   <%= render "items/new_item" %>
 </div>
+<%= link_to "Back", lists_path %>
+

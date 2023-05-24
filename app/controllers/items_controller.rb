@@ -11,9 +11,16 @@ class ItemsController < ApplicationController
       redirect_to list_path(@list), status: :unprocessable_entity
     end
   end
+
+  def toggle
+    @item = Item.find(params[:id])
+    @item.update(checked: params[:checked])
+  
+    render json: { message: "Success" }
+  end
   private
 
   def item_params
-    params.require(:item).permit(:title)
+    params.require(:item).permit(:title, :checked)
   end
 end

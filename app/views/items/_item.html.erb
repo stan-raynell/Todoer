@@ -1,6 +1,6 @@
 <div class="block">
   <%= form_with model: @item do |form| %>
-    <%= form.check_box :checked %>
+    <%= form.check_box :checked, data: { id: item.id, action: "items#toggle" } %>
     <%= item.title %>
   <% end %>
 </div>

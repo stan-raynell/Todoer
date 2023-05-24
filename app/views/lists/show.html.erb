@@ -1,8 +1,7 @@
 List <%= @list.title %><br>
 <% @list.items.each do |item| %>
-<%= item.title %><br>
+  <%= render "items/item", item: item %>
 <% end %>
 <div>
   <%= render "items/new_item" %>
 </div>
-<%= link_to "Back", lists_path %>

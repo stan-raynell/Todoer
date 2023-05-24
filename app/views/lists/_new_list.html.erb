@@ -1,0 +1,6 @@
+<%= form_with(model: list) do |form| %>
+  <div>
+    <%= form.text_field :title, placeholder: "Add new list" %>
+    <%= form.submit "Save" %>
+  </div>
+<% end %>

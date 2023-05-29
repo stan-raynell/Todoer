@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
   end
   
@@ -22,9 +23,16 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.update(checked: params[:checked])  
   end
+
+  def destroy
+    @list = List.find(params[:list_id])
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to @list, notice: "Item deleted."
+  end
   private
 
   def item_params
-    params.require(:item).permit(:title, :checked)
+    params.require(:item).permit(:title)
   end
 end

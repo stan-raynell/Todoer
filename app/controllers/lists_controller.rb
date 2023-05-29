@@ -28,7 +28,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     respond_to do |format|
       if @list.update(list_params)
-        format.html { redirect_to lists_url, notice: "List was successfully updated" }
+        format.html { redirect_to lists_url, notice: "List updated" }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -38,7 +38,7 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    redirect_to lists_url, notice: "List was successfully deleted."
+    redirect_to lists_url, notice: "List deleted."
   end
 
   private

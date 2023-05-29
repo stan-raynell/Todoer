@@ -3,4 +3,6 @@
     <%= form.check_box :checked, data: { id: item.id, action: "items#toggle" } %>
     <%= item.title %>
   <% end %>
+  <%= button_to "Delete", list_item_path(@list.id, item.id), method: :delete %>
+      
 </div>

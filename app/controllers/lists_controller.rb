@@ -20,6 +20,27 @@ class ListsController < ApplicationController
     end
   end
 
+  def edit
+    @list = List.find(params[:id])
+  end
+
+  def update
+    @list = List.find(params[:id])
+    respond_to do |format|
+      if @list.update(list_params)
+        format.html { redirect_to lists_url, notice: "List was successfully updated" }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+    redirect_to lists_url, notice: "List was successfully deleted."
+  end
+
   private
 
   def list_params

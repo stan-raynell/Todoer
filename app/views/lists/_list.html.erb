@@ -1,25 +1,27 @@
-<div class="box">
+<div class="box px-1 py-1">
   <div class="column is-centered">
-    <table class="table has-text-centered is-fullwidth">
-      <tr>
-      <td>
-        <h4 class="title is-4">
-          <%= link_to list.title, list %>
-        </h4>
-      </td>
-      </tr>
+    <turbo-frame id="<%= dom_id list %>">
+      <table class="table has-text-centered is-fullwidth">
+        <tr>
+          <td>
+            <h4 class="title is-4">
+              <%= link_to list.title, list %>
+            </h4>
+          </td>
+        </tr>
       </table>
       <table class="table has-text-centered is-fullwidth">
-      <tr>
-        <td>
-          <%= button_to "Rename", 
+        <tr>
+          <td>
+            <%= button_to "Rename", 
     edit_list_path(list), method: :get, :class => "button is-ghost is-small" %>
-        </td>
-        <td>
-          <%= button_to "Delete", 
+          </td>
+          <td>
+            <%= button_to "Delete", 
       list_path(list), method: :delete, :class => "button is-ghost is-small" %>
-        </td>
-      </tr>
-    </table>
+          </td>
+        </tr>
+      </table>
+    </turbo-frame>
   </div>
 </div>

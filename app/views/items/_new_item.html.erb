@@ -1,6 +1,6 @@
 <%= form_with model: [ @list, @list.items.build ] do |form| %>
-  <div>
-    <%= form.text_field :title, placeholder: "Add new item" %>
-    <%= form.submit "Save" %>
+  <div class="field is-grouped">
+    <%= form.text_field :title, placeholder: "Add new item", :class => "input" %>
+    <%= form.submit "Save", :class => "button" %>
   </div>
 <% end %>

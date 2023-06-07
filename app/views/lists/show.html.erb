@@ -1,14 +1,18 @@
-List <%= @list.title %><br>
-<% if notice.present? %>
-  <p id="notice">
-    <%= notice %>
-  </p>
-<% end %>
-<div data-controller="items">
-  <%= render @list.items %>
+<div class="block mt-6 mb-6">
+  <h3 class="title is-3 has-text-info-dark">
+    <%= @list.title %>
+  </h3>
 </div>
-<div>
-  <%= render "items/new_item" %>
+<div data-controller="items" class="column is-half is-left mt-6 mb-6">
+  <div class="box">
+    <%= render @list.items %>
+    <div class="column is-left">
+      <%= render "items/new_item" %>
+    </div>
+  </div>
 </div>
-<%= link_to "Back", lists_path %>
-
+<div class="column is-left is-one-quarter mt-6 mb-6">
+  <div class="tag is-large has-text-info-dark">
+    <%= link_to "Back", lists_path %>
+  </div>
+</div>

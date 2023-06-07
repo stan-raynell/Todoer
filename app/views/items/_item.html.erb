@@ -1,8 +1,15 @@
 <div class="block">
   <%= form_with model: @list, scope: item do |form| %>
-    <%= form.check_box :checked, data: { id: item.id, action: "items#toggle" } %>
-    <%= item.title %>
-  <% end %>
-  <%= button_to "Delete", list_item_path(@list.id, item.id), method: :delete %>
-      
+    <div class="tags has-addons is-large">
+      <span class="tag is-light is-large">
+        <%= form.check_box :checked, data: { id: item.id, action: "items#toggle" } %>
+      </span>
+      <span class="tag is-light is-large">
+        <%= item.title %>
+      </span><% end %>
+    <span class="tag is-delete is-danger is-large">
+      <%= button_to "", list_item_path(@list.id, item.id), method: :delete,
+      :class => "button is-delete is-ghost" %>
+    </span>
+  </div>
 </div>

@@ -1,27 +1,15 @@
 <div class="box px-1 py-1 mb-1">
   <div class="column is-centered">
-          <table class="table has-text-centered">
-        <tr>
-          <td>
-            <h4 class="title is-4">
-              <%= link_to list.title, list %>
-            </h4>
-          </td>
-        </tr>
-      </table>
-      <turbo-frame id="<%= dom_id list %>">
-      <table class="table has-text-centered">
-        <tr>
-          <td>
-            <%= button_to "Rename", 
-      edit_list_path(list), method: :get, :class => "button is-ghost is-small" %>
-          </td>
-          <td>
-            <%= button_to "Delete", 
-      list_path(list), method: :delete, :class => "button is-ghost is-small" %>
-          </td>
-        </tr>
-      </table>
+    <h4 class="title is-4">
+      <%= link_to list.title, list, :class => "has-text-info-dark" %>
+    </h4>
+    <turbo-frame id="<%= dom_id list %>">
+      <div class="field has-addons">
+        <%= button_to "Rename", 
+      edit_list_path(list), method: :get, :class => "button is-small" %>
+        <%= button_to "Delete", 
+      list_path(list), method: :delete, :class => "button is-small" %>
+      </div>
     </turbo-frame>
   </div>
 </div>

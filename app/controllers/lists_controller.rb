@@ -13,7 +13,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
-        format.html { redirect_to lists_url, notice: "List was successfully created" }
+        format.html { redirect_to lists_url, notice: "List created" }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

@@ -1,7 +1,14 @@
 class ListsController < ApplicationController
+  include Constants
+  before_action :set_lang
+
+  def set_lang
+    @lang = :ru
+  end
+
   def index
     @lists = List.all
-    @list = List.new
+    @list = List.new  
   end
 
   def show

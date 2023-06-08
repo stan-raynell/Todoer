@@ -3,7 +3,7 @@
     <%= @list.title %>
   </h3>
 </div>
-<div data-controller="items" class="column is-half is-left mt-6 mb-6">
+<div data-controller="items" class="column is-one-quarter is-left mt-6 mb-4">
   <div class="box">
     <%= render @list.items %>
     <div class="column is-left">
@@ -11,7 +11,7 @@
     </div>
   </div>
 </div>
-<div class="column is-left is-one-quarter mt-6 mb-6">
+<div class="column is-left is-one-quarter">
   <div class="tag is-large has-text-info-dark">
     <%= link_to "Back", lists_path %>
   </div>

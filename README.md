@@ -1,24 +1,21 @@
-# README
+# Ридми
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Это пример простого списка задач на Ruby on Rails.
 
-Things you may want to cover:
+При первом запуске необходимо выполнить следующие команды:
 
-* Ruby version
+```bash
+bundle install
+rails db:migrate
+```
 
-* System dependencies
+WEB-server доступен по адресу `http://localhost:3000`, запуск командой:
 
-* Configuration
+```bash
+rails server
+```
+Для засеивания базы текстом выполнить:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+rails db:seed
+```

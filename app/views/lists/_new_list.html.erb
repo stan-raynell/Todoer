@@ -1,6 +1,6 @@
 <%= form_with(model: list) do |form| %>
   <div class="field is-grouped">
-    <%= form.text_field :title, placeholder: Constants::NEW_LIST[@lang], :class => "input" %>
-    <%= form.submit Constants::SAVE[@lang], :class => "button" %>
+    <%= form.text_field :title, placeholder: "Создать список", :class => "input" %>
+    <%= form.submit "Сохранить", :class => "button" %>
   </div>
 <% end %>

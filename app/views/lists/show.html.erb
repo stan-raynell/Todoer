@@ -1,18 +1,22 @@
-<div class="block mt-6 mb-6">
-  <h3 class="title is-3 has-text-info-dark">
-    <%= @list.title %>
-  </h3>
-</div>
-<div data-controller="items" class="column is-one-quarter is-left mt-6 mb-4">
-  <div class="box">
-    <%= render @list.items %>
-    <div class="column is-left">
-      <%= render "items/new_item" %>
+<div class="columns is-centered has-text-centered">
+  <div class="column is-one-quarter is-centered mb-4">
+    <div class="block mb-4">
+      <h3 class="title is-3 has-text-info-dark">
+        <%= @list.title %>
+      </h3>
     </div>
-  </div>
-</div>
-<div class="column is-left is-one-quarter">
-  <div class="tag is-large has-text-info-dark">
-    <%= link_to "Назад", lists_path %>
+    <div data-controller="items">
+      <div class="box">
+        <%= render @list.items %>
+        <div class="column">
+          <%= render "items/new_item" %>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="tag is-large has-text-info-dark has-text-centered mt-4">
+        <%= link_to "Назад", lists_path %>
+      </div>
+    </div>
   </div>
 </div>

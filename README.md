@@ -4,18 +4,19 @@
 
 При первом запуске необходимо выполнить следующие команды:
 
-```bash
+```console
 bundle install
 rails db:migrate
 ```
 
 WEB-server доступен по адресу `http://localhost:3000`, запуск командой:
 
-```bash
+```console
 rails server
 ```
+
 Для засеивания базы текстом выполнить:
 
-```bash
+```console
 rails db:seed
 ```
